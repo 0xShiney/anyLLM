@@ -1,0 +1,27 @@
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    environment:
+      ORIGIN: ${ORIGIN:-http://localhost:3000}
+      DATABASE_PATH: /data/anyllm.db
+      LOG_ENCRYPTION_KEY: ${LOG_ENCRYPTION_KEY:?set LOG_ENCRYPTION_KEY di .env}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+    volumes:
+      - anyllm-data:/data
+
+volumes:
+  anyllm-data:
+
+# Target produksi berikutnya (setelah adapter `pg` selesai, lihat docs/decisions.md D2):
+# postgres:
+#   image: postgres:17-alpine
+#   environment:
+#     POSTGRES_DB: anyllm
+#     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?}
+#   volumes:
+#     - pg:/var/lib/postgresql/data

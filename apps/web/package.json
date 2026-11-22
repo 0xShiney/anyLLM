@@ -1,0 +1,27 @@
+{
+  "name": "@anyllm/web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node build",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "test": "tsx --test src/lib/server/engine/*.test.ts"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-node": "^5.2.12",
+    "@sveltejs/kit": "^2.48.5",
+    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@tailwindcss/vite": "^4.1.14",
+    "@types/node": "^26.6.6",
+    "svelte": "^5.39.5",
+    "svelte-check": "^4.3.2",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "anyllm",
+  "private": true,
+  "version": "0.1.0",
+  "description": "anyLLM - gateway LLM terpadu dengan Replay Lab",
+  "scripts": {
+    "dev": "npm --prefix apps/web run dev",
+    "build": "npm --prefix apps/web run build",
+    "check": "npm --prefix apps/web run check",
+    "start": "npm --prefix apps/web run start"
+  }
+}
